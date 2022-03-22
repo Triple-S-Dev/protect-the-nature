@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+export const Container = styled.div`
+  max-width: 1440px;
+  padding: 24px 32px;
+  margin: 0 auto;
+`;
+
 export const Title = styled.h1`
   font-family: 'Excon';
   font-style: normal;
