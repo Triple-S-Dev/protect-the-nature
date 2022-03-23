@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
   return (
@@ -7,23 +8,23 @@ export default function Header() {
         <ul>
           <div className='left'>
             <li>
-              <a className='logo' href='/'>
+              <Link className='logo' to='/'>
                 GotongRoyong
-              </a>
+              </Link>
             </li>
             <li>
-              <a href='/'>About</a>
+              <Link to='/about'>About</Link>
             </li>
             <li>
-              <a href='/'>Events</a>
+              <Link to='/event'>Events</Link>
             </li>
             <li>
-              <a href='/'>Leaderboard</a>
+              <Link to='/leaderboard'>Leaderboard</Link>
             </li>
           </div>
           <div>
             <li>
-              <a href='/'>Sign in</a>
+              <Link to='/signin'>Sign in</Link>
             </li>
           </div>
         </ul>

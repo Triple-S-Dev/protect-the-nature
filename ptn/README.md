@@ -6,11 +6,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 - [x] connect with supabase and get the data
 - [ ] build landing page
-- [ ] build the events page
+- [x] build the events page
 - [x] create the components
-- [ ] add route
-- [ ] detail page
-- [ ] authentication with magic links
+- [x] add route
+- [x] event detail page
+- [ ] add authentication with magic links
 - [ ] add participants
 - [ ] add post activity
 - [ ] add leaderboard

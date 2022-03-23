@@ -16,6 +16,10 @@ header {
   display: flex;
 }
 
+a {
+  text-decoration: none;
+}
+
 .logo {
   font-family: 'Excon';
   font-style: normal;
@@ -53,4 +57,16 @@ header nav ul {
 header nav ul li a {
   text-decoration: none;
   color: #1d152c;
+}
+
+.column-gap-16 {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.column-gap-12 {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }

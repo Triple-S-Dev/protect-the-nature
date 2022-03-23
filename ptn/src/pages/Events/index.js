@@ -47,7 +47,8 @@ export default function Events() {
       <div>
         <Title>
           {' '}
-          Ayo Gotong Royong untuk <EventName>#SaveOurNature</EventName>{' '}
+          Ayo Gotong Royong untuk{' '}
+          <EventName>#SelamatkanAlamIndonesia</EventName>{' '}
         </Title>
         <Margin6 />
         <Text>
@@ -57,9 +58,10 @@ export default function Events() {
       </div>
       <Margin32 />
       <ListCard>
-        {data.map((acara) => (
+        {data.map((acara, index) => (
           <Card
-            key={acara.id}
+            key={index}
+            eventsId={acara.id}
             gambar={acara.images}
             namaEvent={acara.nama_destinasi}
             participant={14}

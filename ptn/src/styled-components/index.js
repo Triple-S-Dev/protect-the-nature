@@ -55,6 +55,10 @@ export const Cards = styled.div`
   height: 347px;
   background: #ffffff;
   border-radius: 10px;
+  transition: box-shadow 0.5s;
+  &:hover {
+    box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+  }
 `;
 
 export const CardMain = styled.div`
@@ -95,4 +99,18 @@ export const Margin6 = styled.div`
 
 export const Margin32 = styled.div`
   margin-top: 32px;
+`;
+
+export const Flex = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+`;
+
+// ================= DETAIL PAGE ====================
+export const DetailImage = styled.img`
+  width: 794px;
+  height: 478px;
+  border-radius: 10px;
 `;
