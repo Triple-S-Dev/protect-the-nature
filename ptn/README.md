@@ -4,8 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## To do
 
-- [ ] connect with supabase
-- [ ] create the components
+- [x] connect with supabase and get the data
+- [ ] build landing page
+- [ ] build the events page
+- [x] create the components
 - [ ] add route
 - [ ] detail page
 - [ ] authentication with magic links

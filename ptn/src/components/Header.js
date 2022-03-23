@@ -21,11 +21,11 @@ export default function Header() {
               <a href='/'>Leaderboard</a>
             </li>
           </div>
-          {/* <div>
+          <div>
             <li>
               <a href='/'>Sign in</a>
             </li>
-          </div> */}
+          </div>
         </ul>
       </nav>
     </header>
