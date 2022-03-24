@@ -85,6 +85,14 @@ export const FlexText = styled.div`
   gap: 8px;
 `;
 
+export const InputEmail = styled.input`
+  background: #fff;
+  border: none;
+  border-radius: 10px;
+  width: 300px;
+  padding: 8px 18px 8px 16px;
+`;
+
 // ================== List Card ====================
 export const ListCard = styled.div`
   display: flex;
@@ -101,11 +109,21 @@ export const Margin32 = styled.div`
   margin-top: 32px;
 `;
 
+export const Margin16 = styled.div`
+  margin-top: 16px;
+`;
+
 export const Flex = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
+`;
+
+export const Column = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 `;
 
 // ================= DETAIL PAGE ====================

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../../supabase';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import {
   Container,
   DetailImage,
@@ -12,10 +12,11 @@ import {
   Btn,
 } from '../../styled-components';
 
-export default function EventDetail() {
+export default function EventDetail({ user }) {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const { id } = useParams();
+  const redirect = useNavigate();
 
   useEffect(() => {
     getProfile();
@@ -43,7 +44,17 @@ export default function EventDetail() {
       setLoading(false);
     }
   };
-  console.log(data);
+
+  const joinEventHandler = (e) => {
+    e.preventDefault();
+    if (!user) {
+      redirect('/signin');
+    }
+  };
+
+  const postActivity = () => {
+    return;
+  };
 
   if (loading) return <div>Loading...</div>;
 
@@ -75,10 +86,24 @@ export default function EventDetail() {
             </FlexText>
           </div>
           <div>
-            <Btn>Join Event</Btn>
+            {user && user ? (
+              <Btn onClick={joinEventHandler}>Join Event</Btn>
+            ) : (
+              <Btn>Post Activity</Btn>
+            )}
           </div>
         </div>
       </Flex>
     </Container>
   );
+}
+
+export async function getServerSideProps({ req }) {
+  const { user } = await supabase.auth.api.getUserByCookie(req);
+
+  if (!user) {
+    return { props: {}, redirect: { destination: '/signin' } };
+  }
+
+  return { props: { user } };
 }
