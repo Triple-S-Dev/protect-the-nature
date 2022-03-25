@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../../supabase';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import {
   Container,
   DetailImage,
@@ -11,11 +11,13 @@ import {
   FlexText,
   Btn,
 } from '../../styled-components';
+import PostActivity from '../../components/PostActivity';
 
-export default function EventDetail() {
+export default function EventDetail({ user }) {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const { id } = useParams();
+  const redirect = useNavigate();
 
   useEffect(() => {
     getProfile();
@@ -27,8 +29,11 @@ export default function EventDetail() {
 
       let { data, error, status } = await supabase
         .from('events')
-        .select(`*`)
-        .match({ id });
+        .select(`*, activities(*)`)
+        .eq('id', id)
+        .single();
+
+      // .match({ id });
 
       if (error && status !== 406) {
         throw error;
@@ -43,23 +48,33 @@ export default function EventDetail() {
       setLoading(false);
     }
   };
-  console.log(data);
+
+  const joinEventHandler = (e) => {
+    e.preventDefault();
+    if (!user) {
+      redirect('/signin');
+    }
+  };
+
+  const postActivity = () => {
+    return;
+  };
 
   if (loading) return <div>Loading...</div>;
-
+  console.log(user.email);
   return (
     <Container>
       <Flex>
         <div>
-          <DetailImage src={data[0].images} />
+          <DetailImage src={data.images} />
         </div>
         <div className='column-gap-16'>
           <Title>
             <EventName>
-              {loading ? 'loading...' : `${data[0].nama_destinasi}`}
+              {loading ? 'loading...' : `${data.nama_destinasi}`}
             </EventName>
           </Title>
-          <Text>{loading ? 'loading...' : `${data[0].deskripsi}`}</Text>
+          <Text>{loading ? 'loading...' : `${data.deskripsi}`}</Text>
           <div className='column-gap-12'>
             <FlexText>
               <img src='/icons/people.svg' alt='participants-icon' />
@@ -67,18 +82,42 @@ export default function EventDetail() {
             </FlexText>
             <FlexText>
               <img src='/icons/location.svg' alt='participants-icon' />
-              <Text>{loading ? 'loading...' : `${data[0].tanggal}`}</Text>
+              <Text>{loading ? 'loading...' : `${data.tanggal}`}</Text>
             </FlexText>
             <FlexText>
               <img src='/icons/date.svg' alt='participants-icon' />
-              <Text>{loading ? 'loading...' : `${data[0].daerah}`}</Text>
+              <Text>{loading ? 'loading...' : `${data.daerah}`}</Text>
             </FlexText>
           </div>
           <div>
-            <Btn>Join Event</Btn>
+            {user.email ? (
+              <Btn>Post Activity</Btn>
+            ) : (
+              <Btn onClick={joinEventHandler}>Join Event</Btn>
+            )}
           </div>
         </div>
       </Flex>
+      <h1 className='activityPostsTitle'>Activity Posts</h1>
+      <hr />
+      {data.activities.map((activity) => (
+        <PostActivity
+          userEmail={activity.user_email}
+          story={activity.story}
+          images={activity.image_activity}
+          key={activity.id}
+        />
+      ))}
     </Container>
   );
 }
+
+// export async function getServerSideProps({ req }) {
+//   const { user } = await supabase.auth.api.getUserByCookie(req);
+
+//   if (!user) {
+//     return { props: {}, redirect: { destination: '/signin' } };
+//   }
+
+//   return { props: { user } };
+// }

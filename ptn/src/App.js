@@ -19,6 +19,7 @@ import Profile from './pages/Profile';
 const App = () => {
   const [authenticatedState, setAuthenticatedState] =
     useState('not-authenticated');
+  const [user, setUser] = useState({});
   const router = useNavigate();
 
   useEffect(() => {
@@ -53,12 +54,13 @@ const App = () => {
     const user = await supabase.auth.user();
     if (user) {
       setAuthenticatedState('authenticated');
+      setUser(user);
     }
   };
-
+  console.log(user);
   return (
     <div>
-      <Header authenticatedState={authenticatedState} />
+      <Header user={user} />
       <Routes>
         <Route path='/' element={<LandingPage />} />
         <Route path='/about' element={<About />} />
@@ -66,10 +68,7 @@ const App = () => {
         <Route path='/signin' element={<Auth />} />
         {/* ============= Event Page================ */}
         <Route path='/event' element={<Events />} />
-        <Route
-          path='/event/detail/:id'
-          element={<EventDetail authenticatedState={authenticatedState} />}
-        />
+        <Route path='/event/detail/:id' element={<EventDetail user={user} />} />
         <Route path='/profile' element={<Profile />} />
         {/* ============= Event Page================ */}
       </Routes>

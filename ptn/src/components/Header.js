@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Header() {
+export default function Header({ user }) {
+  console.log(user);
   return (
     <header>
       <nav>
@@ -24,7 +25,11 @@ export default function Header() {
           </div>
           <div>
             <li>
-              <Link to='/signin'>Sign in</Link>
+              {user.email && user.email ? (
+                <Link to='/profile'>{user.email}</Link>
+              ) : (
+                <Link to='/signin'>Sign in</Link>
+              )}
             </li>
           </div>
         </ul>
