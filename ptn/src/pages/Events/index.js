@@ -10,6 +10,7 @@ import {
   Margin32,
 } from '../../styled-components';
 import Card from '../../components/Card';
+import CardSkeleton from '../../components/skeleton/CardSkeleton';
 
 export default function Events() {
   const [loading, setLoading] = useState(true);
@@ -40,8 +41,6 @@ export default function Events() {
   };
   // console.log(data);
 
-  if (loading) return <div>Loading...</div>;
-
   return (
     <Container>
       <div>
@@ -58,17 +57,21 @@ export default function Events() {
       </div>
       <Margin32 />
       <ListCard>
-        {data.map((acara, index) => (
-          <Card
-            key={index}
-            eventsId={acara.id}
-            gambar={acara.images}
-            namaEvent={acara.nama_destinasi}
-            participant={14}
-            tanggal={acara.tanggal}
-            lokasi={acara.daerah}
-          />
-        ))}
+        {data.map((acara, index) =>
+          loading ? (
+            <CardSkeleton />
+          ) : (
+            <Card
+              key={index}
+              eventsId={acara.id}
+              gambar={acara.images}
+              namaEvent={acara.nama_destinasi}
+              participant={14}
+              tanggal={acara.tanggal}
+              lokasi={acara.daerah}
+            />
+          )
+        )}
       </ListCard>
     </Container>
   );

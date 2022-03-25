@@ -15,6 +15,7 @@ import About from './pages/About';
 import Leaderboard from './pages/Leaderboard';
 import Auth from './pages/Auth';
 import Profile from './pages/Profile';
+import Footer from './components/Footer';
 
 const App = () => {
   const [authenticatedState, setAuthenticatedState] =
@@ -72,6 +73,7 @@ const App = () => {
         <Route path='/profile' element={<Profile />} />
         {/* ============= Event Page================ */}
       </Routes>
+      <Footer />
     </div>
   );
 };
