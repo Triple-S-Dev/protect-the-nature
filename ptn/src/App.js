@@ -68,10 +68,7 @@ const App = () => {
         <Route path='/signin' element={<Auth />} />
         {/* ============= Event Page================ */}
         <Route path='/event' element={<Events />} />
-        <Route
-          path='/event/detail/:id'
-          element={<EventDetail authenticatedState={authenticatedState} />}
-        />
+        <Route path='/event/detail/:id' element={<EventDetail user={user} />} />
         <Route path='/profile' element={<Profile />} />
         {/* ============= Event Page================ */}
       </Routes>

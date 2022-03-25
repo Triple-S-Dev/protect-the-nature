@@ -70,3 +70,112 @@ header nav ul li a {
   flex-direction: column;
   gap: 12px;
 }
+
+.mt-4 {
+  margin-top: 4px;
+}
+
+.mt-16 {
+  margin-top: 16px;
+}
+
+.activityPostsTitle {
+  font-family: 'Excon';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  color: #000000;
+  margin-top: 52px;
+  margin-bottom: 12px;
+}
+
+hr {
+  background: #c4c4c4;
+  margin-bottom: 24px;
+  height: 0.5px;
+}
+
+.hero-title {
+  font-size: 48px;
+  font-family: 'Excon';
+  font-style: normal;
+  font-weight: 900;
+  line-height: 58px;
+  letter-spacing: -0.015em;
+  color: #000000;
+}
+.hero-left {
+  padding: 0 32px;
+}
+
+.hero-image {
+  width: 750px;
+  height: 718px;
+  object-fit: cover;
+}
+
+label {
+  font-family: 'Excon';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 10px;
+  line-height: 14px;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* =============PROFIILE PAGE============ */
+.profiles {
+  height: 100%;
+  width: 600px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  margin: 48px auto;
+  padding: 24px;
+}
+
+.profiles td {
+  padding: 16px;
+}
+
+.signoutButton {
+  padding: 8px 16px;
+  background: #ff2306;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Excon', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 23px;
+  color: #f0e4e3;
+}
+
+.mt-100 {
+  margin-top: 100px;
+}
+
+.alert {
+  width: 621px;
+  height: 55px;
+  margin: 0 auto;
+  padding: 20px 32px;
+  font-family: 'Excon';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 17px;
+  color: #878787;
+  background: #ffffff;
+  border-radius: 10px;
+}

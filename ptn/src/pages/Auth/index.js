@@ -7,6 +7,7 @@ import {
   Margin32,
   InputEmail,
   Margin16,
+  Text,
 } from '../../styled-components';
 
 export default function SignIn() {
@@ -31,8 +32,8 @@ export default function SignIn() {
   }
   if (submitted) {
     return (
-      <div className='container'>
-        <h1>Please check your email to sign in</h1>
+      <div className='container mt-100'>
+        <h1 className='alert'>Please check your email to sign in</h1>
       </div>
     );
   }
@@ -42,13 +43,17 @@ export default function SignIn() {
       <main className='main'>
         <Margin32>
           <Column>
-            <Title>Sign in with Magic Link!</Title>
-            <Margin32 />
-            <InputEmail
-              onChange={(e) => setEmail(e.target.value)}
-              style={{ margin: 10 }}
-              placeholder='Your email!'
-            />
+            <Title>SIGN IN</Title>
+            <Text className='mt-16'>
+              Sign in using magic link to use our feature!
+            </Text>
+            <form className='mt-16' onSubmit={() => signIn()}>
+              <InputEmail
+                onChange={(e) => setEmail(e.target.value)}
+                style={{ margin: 10 }}
+                placeholder='insert your email!'
+              />
+            </form>
             <Margin16 />
             <Btn onClick={() => signIn()}>Sign In</Btn>
           </Column>

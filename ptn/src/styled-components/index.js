@@ -120,6 +120,11 @@ export const Flex = styled.div`
   gap: 20px;
 `;
 
+export const FlexPost = styled.div`
+  display: flex;
+  gap: 18px;
+`;
+
 export const Column = styled.div`
   display: flex;
   align-items: center;
@@ -132,3 +137,32 @@ export const DetailImage = styled.img`
   height: 478px;
   border-radius: 10px;
 `;
+
+export const ActivityImage = styled.img`
+  max-width: 734px;
+  border-radius: 10px;
+`;
+
+export const ActivityUser = styled.p`
+  font-family: 'Excon';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 23px;
+  color: #000000;
+`;
+
+export const Avatar = styled.div`
+  padding: 8px 16px;
+  border-radius: 100px;
+  background-color: #c4c4c4;
+  font-family: 'Excon';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  text-transform: uppercase;
+  color: #000000;
+`;
+
+// ============== LANDING PAGE =============
