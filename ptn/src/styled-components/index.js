@@ -38,6 +38,10 @@ export const Btn = styled.button`
   font-size: 16px;
   line-height: 23px;
   color: #2f5d62;
+  transition: 0.5s;
+  &:hover {
+    opacity: 0.9;
+  }
 `;
 
 export const EventName = styled.span`
