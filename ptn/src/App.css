@@ -157,8 +157,12 @@ label {
 }
 
 /* =============PROFIILE PAGE============ */
+.h-100 {
+  height: 590px;
+}
+
 .profiles {
-  height: 100%;
+  height: 300px;
   width: 600px;
   display: flex;
   align-items: center;
@@ -211,10 +215,15 @@ label {
   width: 100%;
   text-align: left;
 }
+.table th {
+  border: 0.5px solid #d2d2d2;
+}
+.table td {
+  border: 0.5px solid #d2d2d2;
+}
 .table th,
 td {
   padding: 12px 16px;
-  border: 0.5px solid #d2d2d2;
 }
 
 .table thead {
@@ -240,4 +249,99 @@ td {
   height: 347px;
   background: #5a5a5a;
   border-radius: 10px;
+}
+
+/* FORM ACTIVITY */
+form {
+  display: flex;
+  max-width: 906px;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.backdrop {
+  background: rgba(47, 93, 98, 0.5);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+form .form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 68px 114px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.form-wrapper h1 {
+  font-family: 'Excon';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 34px;
+  color: #000000;
+}
+
+.form-wrapper p {
+  font-family: 'Excon';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  color: #000000;
+}
+
+.form-wrapper caption {
+  font-family: 'Excon';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+
+  color: #878787;
+}
+
+.dropzone {
+  width: 678px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.storyzone {
+  width: 678px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dropzone input {
+  background: #f5f5f5;
+  border: 1px dashed #878787;
+  box-sizing: border-box;
+  border-radius: 10px;
+  width: 678px;
+  height: 120px;
+  padding: 8px 18px 8px 16px;
+}
+
+.storyzone input {
+  background: #f5f5f5;
+  border-radius: 10px;
+  outline: none;
+  padding: 8px 18px 8px 16px;
+  width: 678px;
+  height: 80px;
+  border: none;
 }
