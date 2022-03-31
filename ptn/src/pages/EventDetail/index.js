@@ -12,10 +12,12 @@ import {
   Btn,
 } from '../../styled-components';
 import PostActivity from '../../components/PostActivity';
+import ActivityForm from '../../components/ActivityForm';
 
 export default function EventDetail({ user }) {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
+  const [formActive, setFormActive] = useState(false);
   const { id } = useParams();
   const redirect = useNavigate();
 
@@ -51,13 +53,14 @@ export default function EventDetail({ user }) {
 
   const joinEventHandler = (e) => {
     e.preventDefault();
-    if (!user) {
+    if (!user.email) {
       redirect('/signin');
     }
   };
 
-  const postActivity = () => {
-    return;
+  const postActivityHandler = (e) => {
+    e.preventDefault();
+    setFormActive(true);
   };
 
   if (loading) return <div>Loading...</div>;
@@ -91,13 +94,18 @@ export default function EventDetail({ user }) {
           </div>
           <div>
             {user.email ? (
-              <Btn>Post Activity</Btn>
+              <Btn onClick={postActivityHandler}>Post Activity</Btn>
             ) : (
               <Btn onClick={joinEventHandler}>Join Event</Btn>
             )}
           </div>
         </div>
       </Flex>
+      <ActivityForm
+        formActive={formActive}
+        setFormActive={setFormActive}
+        postActivityHandler={postActivityHandler}
+      />
       <h1 className='activityPostsTitle'>Activity Posts</h1>
       <hr />
       {data.activities.map((activity) => (

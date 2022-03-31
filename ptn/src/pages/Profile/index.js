@@ -27,27 +27,29 @@ export default function Profile() {
   if (!profile) return null;
 
   return (
-    <div className='profiles'>
-      <h1>User Profile</h1>
-      <table>
-        <tbody>
-          <tr>
-            <td>User Email</td>
-            <td>: {profile.email}</td>
-          </tr>
-          <tr>
-            <td>User ID</td>
-            <td>: {profile.id}</td>
-          </tr>
-          <tr>
-            <td>
-              <button className='signoutButton' onClick={signOut}>
-                Sign out
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <div className='h-100'>
+      <div className='profiles'>
+        <h1>User Profile</h1>
+        <table>
+          <tbody>
+            <tr>
+              <td>User Email</td>
+              <td>: {profile.email}</td>
+            </tr>
+            <tr>
+              <td>User ID</td>
+              <td>: {profile.id}</td>
+            </tr>
+            <tr>
+              <td>
+                <button className='signoutButton' onClick={signOut}>
+                  Sign out
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

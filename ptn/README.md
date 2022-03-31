@@ -18,11 +18,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [x] add leaderboard component
 - [x] add hover effect on navbar
 - [x] add hover effect on button
+- [x] build landing page
+- [x] join event button still bug
 - [ ] add participants and add to profile
 - [ ] add form for insert data post activity
-- [ ] build landing page
 - [ ] build refetch or reload after submitting
 - [ ] add dropdown for (my event link and logout button)
 - [ ] adding skeleton when loading page
 - [ ] remove the style.css to styled components
 - [ ] remove warning
+- [ ] big desktop screen
+- [ ] mobile screen
