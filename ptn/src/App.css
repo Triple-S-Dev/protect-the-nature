@@ -252,7 +252,7 @@ td {
 }
 
 /* FORM ACTIVITY */
-form {
+.forms {
   display: flex;
   max-width: 906px;
   margin: 0 auto;
@@ -273,7 +273,7 @@ form {
   z-index: 2;
 }
 
-form .form-wrapper {
+.forms .form-wrapper {
   display: flex;
   flex-direction: column;
   gap: 24px;

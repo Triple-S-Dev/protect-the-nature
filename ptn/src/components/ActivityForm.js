@@ -14,9 +14,9 @@ export default function ActivityForm({
   return (
     <div onClick={onFormSubmit} className='form-activity'>
       {formActive ? (
-        <>
+        <React.Fragment>
           <div className='backdrop'></div>
-          <form onSubmit={onFormSubmit}>
+          <form className='forms' onSubmit={onFormSubmit}>
             <div className='form-wrapper'>
               <div>
                 <h1>Post Your Activity During Saving The Nature!</h1>
@@ -44,7 +44,7 @@ export default function ActivityForm({
               <Btn>Post Activity</Btn>
             </div>
           </form>
-        </>
+        </React.Fragment>
       ) : (
         ''
       )}

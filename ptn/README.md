@@ -20,6 +20,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [x] add hover effect on button
 - [x] build landing page
 - [x] join event button still bug
+- [x] test adding comment and displayed more than one comment
 - [ ] add participants and add to profile
 - [ ] add form for insert data post activity
 - [ ] build refetch or reload after submitting
@@ -29,3 +30,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [ ] remove warning
 - [ ] big desktop screen
 - [ ] mobile screen
+- [ ] adding izitoast notification
+- [ ] adding react dropzone
+- [ ] adding handler for post activity (upload image and add description)

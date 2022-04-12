@@ -24,7 +24,7 @@ export default function LandingPage() {
       <div>
         <img
           className='hero-image'
-          src='https://hariannusantara.com/wp-content/uploads/2019/06/gambar-ilustrasi-pemandangan-alam7.jpg'
+          src='https://cdn.dribbble.com/users/1731254/screenshots/11649852/nature_gradients_illustration_tubikarts_4x.png'
           alt='alam Indonesia'
         />
       </div>
